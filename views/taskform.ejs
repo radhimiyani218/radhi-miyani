@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <%- include('nav') %>
+   <center>
+    <form action="/task/taskform" method="post" id="form">
+        <label>Image</label>
+        <input type="url" id="img" placeholder="Enter your img" name="img">
+        <br><br>
+        <label>Title</label>
+        <input type="text" id="email" placeholder="abc@gamil.com" name="email">
+        <br><br>
+        <label>categories</label>
+        <input type="cate" id="cate" placeholder="Enter your categories" name="cate">
+        <br><br>
+        <label>Description</label>
+        <input type="desc" id="desc" placeholder="Enter your Description" name="Description">
+        <br><br>
+        <label>duedate</label>
+        <input type="duedate" id="duedate" placeholder="Enter your duedate" name="duedate">
+        <br><br>
+       <input type="submit" id="btn">
+    </form>
+   </center>
+</body>
+</html>

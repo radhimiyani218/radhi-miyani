@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <%- include('nav') %>
+   <center>
+    <form action="/user/signup" method="post" id="form">
+        <label>Username</label>
+        <input type="text" id="username" placeholder="Enter your username" name="username">
+        <br><br>
+        <label>Email</label>
+        <input type="text" id="email" placeholder="abc@gamil.com" name="email">
+        <br><br>
+        <label>Password</label>
+        <input type="text" id="Password" placeholder="Enter your Password" name="Password">
+        <br><br>
+       <select name="role">
+        <option value="user">User</option>
+        <option value="admin">admin</option>
+       </select>
+       <br><br>
+       <input type="submit" id="btn">
+    </form>
+   </center>
+</body>
+</html>

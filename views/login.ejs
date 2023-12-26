@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <%- include('nav') %>
+   <center>
+    <form action="/user/login" method="post" id="form">
+        <label>Email</label>
+        <input type="text" id="email" placeholder="abc@gamil.com" name="email">
+        <br><br>
+        <label>Password</label>
+        <input type="text" id="Password" placeholder="Enter your Password" name="Password">
+        <br><br>
+       <input type="submit" id="btn">
+    </form>
+   </center>
+</body>
+</html>
