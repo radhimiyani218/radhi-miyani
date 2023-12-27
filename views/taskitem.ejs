@@ -8,9 +8,11 @@
 </head>
 <body>
     <%- include('nav') %>
+    <div id="box"></div>
 </body>
-<!-- user -->
+
 <script>
+  
      fetch("/task/taskitem")
     .then((response) => response.json())
     .then((response) => display(response))
@@ -42,5 +44,17 @@
       );
       document.getElementById("box").append(div);
 }
+const deleted=(id)=>{
+        fetch(`/task/delete/${id}`,{
+            method: 'DELETE',
+        })
+    }
+    const taskupdate=(id)=>{
+        fetch(`/task/taskupdate/${id}`,{
+            method: 'PATCH',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(taskupdate)
+        })
+    }
 </script>
 </html>

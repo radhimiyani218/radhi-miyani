@@ -1,48 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>task</title>
-    <link rel="stylesheet" href="/css/index.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+  <body>
     <%- include('nav') %>
     <div id="box"></div>
-</body>
-<script>
-     
-  const display = (data) => {
-    console.log(data);
-    document.getElementById("box").innerHTML = "";
-    data.map((ele) => {
-      let img = document.createElement("img");
-      img.src = ele.img;
-      img.style.width = "150px";
-      let title = document.createElement("h1");
-      title.innerHTML = `Title:${ele.title}`;
-      let category = document.createElement("h3");
-      category.innerHTML = `Category:${ele.category}`;
-      let desc = document.createElement("p");
-      desc.innerHTML = `Desc:${ele.desc}`;
-      let duedate = document.createElement("p");
-      desc.innerHTML = `duedate:${ele.duedate}`;
-    })
+  </body>
+  <script>
+    const display = (data) => {
+      console.log(data);
+      document.getElementById("box").innerHTML = "";
+      data.map((ele) => {
+        let img = document.createElement("img");
+        img.src = ele.img;
+        img.style.width = "150px";
+        let title = document.createElement("h1");
+        title.innerHTML = `Title:${ele.title}`;
+        let category = document.createElement("h3");
+        category.innerHTML = `Category:${ele.category}`;
+        let desc = document.createElement("p");
+        desc.innerHTML = `Desc:${ele.desc}`;
+        let duedate = document.createElement("p");
+        desc.innerHTML = `duedate:${ele.duedate}`;
+        btn1 = document.createElement("button");
+        btn1.innerHTML = "delete";
+        btn1.addEventListener("click", () => deleted(ele._id));
+        btn2 = document.createElement("button");
+        btn2.innerHTML = "update";
+      });
       let div = document.createElement("div");
-      div.append(
-        img,
-        title,
-        desc,
-        category,
-        duedate
-      );
+      div.append(img, title, desc, category, duedate);
       document.getElementById("box").append(div);
-}
+    };
 
-fetch("/task/find")
-    .then((response) => response.json())
-    .then((response) => console.log(response))
-    .catch((error) => console.log(error));
-
-</script>
+    fetch("/task/find")
+      .then((response) => response.json())
+      .then((response) => console.log(response))
+      .catch((error) => console.log(error));
+  </script>
 </html>

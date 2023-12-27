@@ -45,7 +45,7 @@ const tasklist=async(req,res)=>{
 const taskitem=async(req,res)=>{
    const {id} = req.user.id
    console.log(id); 
-   let data=await task.find({createBy:req.user.id})
+   let data=await task.find({createBy:id})
    res.send(data)
 }
 
@@ -59,4 +59,15 @@ const deleted=async(req,res)=>{
    res.send(data)
 }
 
- module.exports={find,createBy,taskform,tasklist,taskitem,add,getitem,deleted}
+const taskupdate = async (req, res) => {
+       let {id} = req.params;
+       let data = await task.findById(id)
+       res.send(data);
+}
+const update = async(req,res)=>{
+       let {id} = req.params;
+       let data= await task.findByIdAndUpdate(req.body,id)
+       res.send(data)
+}
+
+ module.exports={find,createBy,taskform,tasklist,taskitem,add,getitem,deleted,update,taskupdate}
